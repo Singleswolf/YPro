@@ -21,10 +21,7 @@ class TimeoutInterceptor : Interceptor {
         val readTimeout = request.header(READ_TIMEOUT_NAME)
         if (!TextUtils.isEmpty(readTimeout)) {
             try {
-                chain.withReadTimeout(
-                    Integer.valueOf(readTimeout!!.trim { it <= ' ' }),
-                    TimeUnit.MILLISECONDS
-                )
+                chain.withReadTimeout(Integer.valueOf(readTimeout!!.trim { it <= ' ' }), TimeUnit.MILLISECONDS)
             } catch (ignored: Exception) {
             }
 
@@ -34,10 +31,7 @@ class TimeoutInterceptor : Interceptor {
         val writeTimeout = request.header(WRITE_TIMEOUT_NAME)
         if (!TextUtils.isEmpty(writeTimeout)) {
             try {
-                chain.withWriteTimeout(
-                    Integer.valueOf(writeTimeout!!.trim { it <= ' ' }),
-                    TimeUnit.MILLISECONDS
-                )
+                chain.withWriteTimeout(Integer.valueOf(writeTimeout!!.trim { it <= ' ' }), TimeUnit.MILLISECONDS)
             } catch (ignored: Exception) {
             }
 
@@ -47,10 +41,7 @@ class TimeoutInterceptor : Interceptor {
         val connectionTimeout = request.header(CONNECTION_TIMEOUT_NAME)
         if (!TextUtils.isEmpty(connectionTimeout)) {
             try {
-                chain.withConnectTimeout(
-                    Integer.valueOf(connectionTimeout!!.trim { it <= ' ' }),
-                    TimeUnit.MILLISECONDS
-                )
+                chain.withConnectTimeout(Integer.valueOf(connectionTimeout!!.trim { it <= ' ' }), TimeUnit.MILLISECONDS)
             } catch (ignored: Exception) {
             }
 

@@ -21,7 +21,7 @@ abstract class RxCallback<T> : DisposableObserver<BaseResponse<T>>() {
                 onSuccess(tBaseResponse.data)
             }
         } else {
-            onFailed(tBaseResponse.code, tBaseResponse.message)
+            onFailed(tBaseResponse.errorCode, tBaseResponse.errorMsg)
         }
     }
 

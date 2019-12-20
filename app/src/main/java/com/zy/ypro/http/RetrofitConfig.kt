@@ -1,13 +1,9 @@
 package com.zy.ypro.http
 
 import com.google.gson.Gson
-
-import io.reactivex.Scheduler
 import okhttp3.OkHttpClient
 
 interface RetrofitConfig {
-
-    val executeScheduler: Scheduler
 
     fun buildGson(): Gson
 

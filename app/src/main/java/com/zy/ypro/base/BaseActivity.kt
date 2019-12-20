@@ -7,7 +7,9 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.zy.ypro.mvp.IView
+import com.blankj.utilcode.util.BarUtils
+import com.blankj.utilcode.util.ColorUtils
+import com.zy.ypro.R
 
 /**
  * @Description:
@@ -20,6 +22,7 @@ abstract class BaseActivity : AppCompatActivity(), IView, View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.mContext = this
+        BarUtils.setStatusBarColor(this, ColorUtils.getColor(R.color.common_bg), true)
         setContentView(layoutId)
         initView()
         initListener()

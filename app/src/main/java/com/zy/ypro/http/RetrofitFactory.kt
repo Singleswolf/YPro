@@ -1,7 +1,6 @@
 package com.zy.ypro.http
 
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
@@ -9,13 +8,12 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 object RetrofitFactory {
 
-    fun newBuilder(config: RetrofitConfig): Retrofit.Builder {
+    fun <T> create(clazz: Class<T>): T {
+        val config = DefaultRetrofitConfig()
         return Retrofit.Builder().baseUrl(config.buildBaseUrl())
             .client(config.buildClient())
             .addConverterFactory(GsonConverterFactory.create(config.buildGson()))
-            .addCallAdapterFactory(
-                RxJava2CallAdapterFactory
-                    .createWithScheduler(config.executeScheduler)
-            )
+            .build()
+            .create(clazz)
     }
 }

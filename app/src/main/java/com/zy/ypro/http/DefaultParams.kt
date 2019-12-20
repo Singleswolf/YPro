@@ -11,11 +11,7 @@ class DefaultParams : RetrofitConfig.Params {
         get() = HashMap()
 
     override val urlParams: MutableMap<String, String>
-        get() {
-            val map = HashMap<String, String>()
-            map["apikey"] = "f08493bf125244d4f6924d1ec1b6ba4a"
-            return map
-        }
+        get() = HashMap()
 
     override val bodyParams: MutableMap<String, String>
         get() = HashMap()

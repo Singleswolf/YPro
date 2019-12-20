@@ -10,14 +10,13 @@ import com.zy.ypro.http.interceptor.HttpLoggingInterceptor
 import com.zy.ypro.http.interceptor.TimeoutInterceptor
 import com.zy.ypro.http.utils.Gsons
 import com.zy.ypro.http.utils.HttpsUtils
-import io.reactivex.Scheduler
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
 /**
  * @Description: Created by yong on 2019/3/26 14:56.
  */
-class DefaultRetrofitConfig(override val executeScheduler: Scheduler) : RetrofitConfig {
+class DefaultRetrofitConfig : RetrofitConfig {
     private var mOkHttpClient: OkHttpClient? = null
     private var mUploadOkHttpClient: OkHttpClient? = null
     private val isUpload = false
@@ -34,7 +33,7 @@ class DefaultRetrofitConfig(override val executeScheduler: Scheduler) : Retrofit
     }
 
     override fun buildBaseUrl(): String {
-        return "https://api.apiopen.top/"
+        return "https://www.wanandroid.com"
     }
 
     override fun buildClient(): OkHttpClient {
@@ -69,8 +68,7 @@ class DefaultRetrofitConfig(override val executeScheduler: Scheduler) : Retrofit
             builder.hostnameVerifier(HttpsUtils.UnSafeHostnameVerifier)
         }
         if (isCookie) {
-            val cookieJar =
-                PersistentCookieJar(SetCookieCache(), SharedPrefsCookiePersistor(App.getContext()))
+            val cookieJar = PersistentCookieJar(SetCookieCache(), SharedPrefsCookiePersistor(App.getContext()))
             builder.cookieJar(cookieJar)
         }
         builder.addInterceptor(TimeoutInterceptor())

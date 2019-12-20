@@ -53,8 +53,7 @@ class ConfigParamsInterceptor(private val mConfig: RetrofitConfig.Params) : Inte
         if (!get) {
             if (original.body() is MultipartBody) {
                 val body = original.body() as MultipartBody?
-                val multipartBuilder =
-                    MultipartBody.Builder((original.body() as MultipartBody).boundary())
+                val multipartBuilder = MultipartBody.Builder((original.body() as MultipartBody).boundary())
                 multipartBuilder.setType(body!!.type())
                 val partList = ArrayList<MultipartBody.Part>(body.parts())
 
@@ -75,10 +74,7 @@ class ConfigParamsInterceptor(private val mConfig: RetrofitConfig.Params) : Inte
                 }
 
                 builder.method(original.method(), multipartBuilder.build())
-            } else if (original.body() is FormBody
-                || original.body() == null
-                || original.body()!!.contentLength() == 0L
-            ) {
+            } else if (original.body() is FormBody || original.body() == null || original.body()!!.contentLength() == 0L) {
                 // 存在一部分没有任何参数的请求，只需要通用参数，这部分请求的 body 的 Length 是 0
                 // 需要处理成 FormBody
                 val formBuilder = FormBody.Builder()
@@ -89,10 +85,7 @@ class ConfigParamsInterceptor(private val mConfig: RetrofitConfig.Params) : Inte
                     for (i in 0 until originBody!!.size()) {
                         val name = originBody.name(i)
                         val value = originBody.value(i)
-                        if (postParams != null
-                            && postParams.containsKey(name)
-                            && TextUtils.equals(value, postParams[name])
-                        ) {
+                        if (postParams != null && postParams.containsKey(name) && TextUtils.equals(value, postParams[name])) {
                             postParams.remove(name)
                         }
                     }

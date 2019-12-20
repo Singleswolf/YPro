@@ -2,12 +2,14 @@ package com.zy.ypro
 
 import android.os.Bundle
 import com.zy.ypro.base.BaseActivity
-import com.zy.ypro.mvp.ui.TabFragment
+import com.zy.ypro.base.BaseFragment
+import com.zy.ypro.module.mine.TabFragment
+import com.zy.ypro.module.mine.fragment.UserFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : BaseActivity() {
-    val fragment: ArrayList<TabFragment> = arrayListOf()
+    val fragment: ArrayList<BaseFragment> = arrayListOf()
     override val layoutId: Int
         get() = R.layout.activity_main
 
@@ -30,11 +32,8 @@ class MainActivity : BaseActivity() {
         homeFragment2.arguments = bundle2
         fragment.add(homeFragment2)
 
-        val homeFragment3 = TabFragment()
-        val bundle3 = Bundle()
-        bundle3.putString("content", "我的")
-        homeFragment3.arguments = bundle3
-        fragment.add(homeFragment3)
+        val userFragment = UserFragment()
+        fragment.add(userFragment)
 
         changeFragment(0)
     }

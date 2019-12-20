@@ -20,42 +20,40 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="horizontal"
+        android:background="@color/bottomBar_bg"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.chaychan.library.BottomBarItem
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:iconNormal="@mipmap/ic_launcher"
-            app:iconSelected="@mipmap/ic_launcher"
-            app:itemMarginTop="-5dp"
+            app:iconNormal="@drawable/ic_home"
+            app:iconSelected="@drawable/ic_home_selected"
             app:itemText="首页"
-            app:itemTextSize="8sp"
-            app:textColorNormal="@color/colorPrimary"
-            app:textColorSelected="@color/colorAccent" />
+            app:itemTextSize="10sp"
+            app:textColorNormal="@color/bottomBar_text_normal"
+            app:textColorSelected="@color/bottomBar_text_selected" />
 
         <com.chaychan.library.BottomBarItem
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:iconNormal="@mipmap/ic_launcher"
-            app:iconSelected="@mipmap/ic_launcher"
-            app:itemMarginTop="-5dp"
+            app:iconNormal="@drawable/ic_launcher"
+            app:iconSelected="@drawable/ic_launcher"
             app:itemText="视频"
-            app:itemTextSize="8sp"
-            app:textColorNormal="@color/colorPrimary"
-            app:textColorSelected="@color/colorAccent" />
+            app:itemTextSize="10sp"
+            app:textColorNormal="@color/bottomBar_text_normal"
+            app:textColorSelected="@color/bottomBar_text_selected" />
 
         <com.chaychan.library.BottomBarItem
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:iconNormal="@mipmap/ic_launcher"
-            app:iconSelected="@mipmap/ic_launcher"
-            app:itemMarginTop="-5dp"
+            app:iconNormal="@drawable/ic_mine"
+            app:iconSelected="@drawable/ic_mine_selected"
             app:itemText="我的"
-            app:itemTextSize="8sp"
-            app:textColorNormal="@color/colorPrimary"
-            app:textColorSelected="@color/colorAccent" />
+            app:itemTextSize="10sp"
+            app:textColorNormal="@color/bottomBar_text_normal"
+            app:textColorSelected="@color/bottomBar_text_selected" />
     </com.chaychan.library.BottomBarLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
