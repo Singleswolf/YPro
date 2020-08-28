@@ -10,50 +10,18 @@
         android:id="@+id/frame_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.chaychan.library.BottomBarLayout
-        android:id="@+id/bottom_bar"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:background="@color/bottomBar_bg"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.chaychan.library.BottomBarItem
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:iconNormal="@drawable/ic_home"
-            app:iconSelected="@drawable/ic_home_selected"
-            app:itemText="首页"
-            app:itemTextSize="10sp"
-            app:textColorNormal="@color/bottomBar_text_normal"
-            app:textColorSelected="@color/bottomBar_text_selected" />
-
-        <com.chaychan.library.BottomBarItem
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:iconNormal="@drawable/ic_launcher"
-            app:iconSelected="@drawable/ic_launcher"
-            app:itemText="视频"
-            app:itemTextSize="10sp"
-            app:textColorNormal="@color/bottomBar_text_normal"
-            app:textColorSelected="@color/bottomBar_text_selected" />
-
-        <com.chaychan.library.BottomBarItem
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:iconNormal="@drawable/ic_mine"
-            app:iconSelected="@drawable/ic_mine_selected"
-            app:itemText="我的"
-            app:itemTextSize="10sp"
-            app:textColorNormal="@color/bottomBar_text_normal"
-            app:textColorSelected="@color/bottomBar_text_selected" />
-    </com.chaychan.library.BottomBarLayout>
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_navigation"
+        app:itemIconTint="@color/selector_bottom_navigation_item"
+        app:itemTextColor="@color/selector_bottom_navigation_item"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_bottom_navigation" />
 </androidx.constraintlayout.widget.ConstraintLayout>

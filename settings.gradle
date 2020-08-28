@@ -1,2 +1,4 @@
+include ':commonlib'
+include ':imageload'
 include ':app'
-rootProject.name='YPro'
+rootProject.name = 'YPro'

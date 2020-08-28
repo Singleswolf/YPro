@@ -22,11 +22,11 @@
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/common_bg"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/icon_head"
@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline1"
-        tool:src="@drawable/ic_launcher" />
+        tool:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/tv_login"
@@ -47,6 +47,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/icon_head"
-        tool:text="登录/注册" />
+        tool:text="@string/str_login_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

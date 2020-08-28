@@ -1,5 +1,23 @@
 <resources>
     <string name="app_name">YPro</string>
-    <string name="login">登录</string>
-    <string name="register">注册</string>
+    <string name="str_login">登录</string>
+    <string name="str_register">注册</string>
+    <string name="str_login_register">登录/注册</string>
+
+    <string name="str_home">首页</string>
+    <string name="str_system">体系</string>
+    <string name="str_navigation">导航</string>
+    <string name="str_project">项目</string>
+    <string name="str_mine">我的</string>
+
+    <string name="str_hint_input_user">请输入用户名</string>
+    <string name="str_hint_input_password">请输入密码</string>
+    <string name="str_hint_input_confirm_password">请确认密码</string>
+
+    <string name="str_tips_user_empty">账号不能为空</string>
+    <string name="str_tips_password_empty">密码不能为空</string>
+    <string name="str_tips_user_less_3">账号不能少于3位</string>
+    <string name="str_tips_password_less_6">密码不能少于6位</string>
+    <string name="str_tips_confirm_password_empty">确认密码不能为空</string>
+    <string name="str_tips_confirm_password_error">两次输入密码不一致</string>
 </resources>

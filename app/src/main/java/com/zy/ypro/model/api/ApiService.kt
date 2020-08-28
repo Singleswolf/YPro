@@ -1,8 +1,8 @@
 package com.zy.ypro.model.api
 
 
-import com.zy.ypro.http.BaseResponse
-import com.zy.ypro.model.entity.LoginBean
+import com.zy.commonlib.http.ApiResponse
+import com.zy.ypro.model.entity.UserInfo
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -18,15 +18,6 @@ interface ApiService {
         const val TAG_API_LOGOUT = "TAG_API_LOGOUT"
     }
 
-    class Code {
-        companion object {
-            const val ERROR = 1000
-            const val SUCCESS = 0
-            const val FAILED_NO_CACHE = -9000  //没有缓存
-            const val FAILED_NOT_LOGIN = -1001 //请先登录
-        }
-    }
-
     /**
      * 登录
      * 方法： POST
@@ -35,7 +26,7 @@ interface ApiService {
      */
     @FormUrlEncoded
     @POST("user/login")
-    suspend fun login(@Field("username") username: String, @Field("password") password: String): BaseResponse<LoginBean>
+    suspend fun login(@Field("username") username: String, @Field("password") password: String): ApiResponse<UserInfo>
 
     /**
      * 注册
@@ -44,7 +35,11 @@ interface ApiService {
      */
     @FormUrlEncoded
     @POST("user/register")
-    suspend fun registerUser(@Field("username") username: String, @Field("password") password: String, @Field("repassword") repassword: String): BaseResponse<LoginBean>
+    suspend fun registerUser(
+        @Field("username") username: String,
+        @Field("password") password: String,
+        @Field("repassword") repassword: String
+    ): ApiResponse<UserInfo>
 
     /**
      * 退出
@@ -53,5 +48,5 @@ interface ApiService {
      * 如果客户端 Cookie 实现合理，可以实现自动清理，如果本地做了用户账号密码和保存，及时清理。
      */
     @GET("user/logout/json")
-    suspend fun logout(): BaseResponse<Any>
+    suspend fun logout(): ApiResponse<Any>
 }

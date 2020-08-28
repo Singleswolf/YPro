@@ -1,7 +1,7 @@
 package com.zy.ypro.module.mine
 
+import com.zy.commonlib.base.BaseFragment
 import com.zy.ypro.R
-import com.zy.ypro.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_tab.*
 
 
@@ -16,6 +16,6 @@ class TabFragment : BaseFragment() {
 
     override fun initData() {
         val content = arguments!!.getString(CONTENT)
-        tv_text.setText(content)
+        tv_text.text = content
     }
 }

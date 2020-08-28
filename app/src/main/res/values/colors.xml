@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#3790F0</color>
+    <color name="colorPrimaryDark">#2559B1</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="common_bg">#3790F0</color>
-    <color name="common_bg_half">#803790F0</color>
-    <color name="bottomBar_bg">#EEEDED</color>
-    <color name="bottomBar_text_normal">#707070</color>
-    <color name="bottomBar_text_selected">#1296DB</color>
-    <color name="text_color_blue">#3790F0</color>
-    <color name="text_color_white">#FFFFFF</color>
+    <color name="color_gray">#707070</color>
+    <color name="white">#FFFFFF</color>
 </resources>

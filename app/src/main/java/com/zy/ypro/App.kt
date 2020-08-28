@@ -2,6 +2,9 @@ package com.zy.ypro
 
 import android.app.Application
 import android.content.Context
+import android.content.SharedPreferences
+import com.blankj.utilcode.util.Utils
+import com.zy.ypro.utils.ActivityHelper
 
 /**
  * @Description:
@@ -11,13 +14,13 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        app = this
+        Utils.init(this)
+        ActivityHelper.init(this)
     }
 
     companion object {
-        private var app: Application? = null
-        fun getContext(): Context {
-            return app!!
+        val prefs: SharedPreferences by lazy {
+            Utils.getApp().getSharedPreferences("SP_NAME", Context.MODE_PRIVATE)
         }
     }
 }
