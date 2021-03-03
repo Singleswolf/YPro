@@ -96,7 +96,7 @@ class LoginActivity : BaseVmActivity<LoginViewModel>() {
     override fun observer() {
         mViewModel.run {
             loading.observe(this@LoginActivity, {
-                if (it) showLoading("") else hideLoading()
+                if (it) showLoading() else hideLoading()
             })
             result.observe(this@LoginActivity, {
                 if (it) finish()

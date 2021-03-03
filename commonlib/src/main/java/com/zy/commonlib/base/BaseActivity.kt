@@ -38,7 +38,7 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
     protected open fun initData() {}
     protected open fun initListener() {}
 
-    protected fun showLoading(msg: String) {
+    protected fun showLoading(msg: String = "") {
         if (!TextUtils.isEmpty(msg)) {
             mDialog.setMessage(msg)
         }

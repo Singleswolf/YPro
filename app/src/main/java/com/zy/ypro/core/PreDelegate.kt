@@ -13,7 +13,6 @@ class SPDelegate<T>(
 ) {
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
-        Log.d("TAG", "getValue: $name")
         return getPref(name, default) ?: default
     }
 
